@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+<!--On herite du template qui s'appelle Chrome, tous les templates OWL commencent avec un element t, qui a un attribut
+t-name et c'est celui là qui contient le nom du template au cas où on voudrais hériter de ce template l'attribut
+t-inherit mode avec sa valeur extension permet d'indiquer qu'on ne cree pas un nouvau composant mais qu'on etend d'un
+composant existant, ce qui fait qu'on peut utiliser des éléments existant dans l'autre template-->
+    <t t-inherit="point_of_sale.Chrome" t-inherit-mode="extension" owl="1">
+<!--        On choisis l'element sur lequel on pointe par le nom de la balise et un de ses attribut, généralement la
+classe et ici on pointe sur la balise img qui a la classe pos-logo, et l'attribut position sert à dire ce qu'on veut
+faire exactement sur cet élément , on prend attribute pour modifier l valeur d'un attribut et ici on chamge le src-->
+        <xpath expr="//img[hasclass('pos-logo')]" position="attributes">
+            <attribute name="src">/odoo_pos_owl/static/src/img/logo.png</attribute>
+        </xpath>
+    </t>
+</templates>
