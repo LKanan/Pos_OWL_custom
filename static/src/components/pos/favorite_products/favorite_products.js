@@ -16,13 +16,22 @@ const productScreenInherit = (product_screen) => class extends product_screen {
     //     Appel d'une methode RPC
         onWillStart(
             async()=>{
+                // const data = await this.env.services.rpc({
+                //     Object parameter
+                //     'model':'product.product', //nom du model
+                //     'method': 'search', //methode existante du model, cette methode permet de faire une recherche avec des conditions mises dans le domain
+                //     'kwargs': {
+                //         'domain':[['available_in_pos','=',true], ['product_tag_ids.name','=','Favorite']]
+                //     }
+                // }
+                // )
+
+                //Appel d'une methode qu'on a creer nous meme dans le model product.product
                 const data = await this.env.services.rpc({
                 //     Object parameter
                     'model':'product.product', //nom du model
-                    'method': 'search', //methode existante du model, cette methode permet de faire une recherche avec des conditions mises dans le domain
-                    'kwargs': {
-                        'domain':[['available_in_pos','=',true], ['product_tag_ids.name','=','Favorite']]
-                    }
+                    'method': 'getFavoriteProducts',
+                    'args': [{}]
                 }
                 )
                 this.favorite_products = data
