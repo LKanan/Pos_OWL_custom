@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-inherit="point_of_sale.ProductScreen" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[hasclass('rightpane')]" position="inside">
+            <div class="favorite-products-container">
+                <div class="favorite-products">
+<!--                    <h1>Favorite products</h1>-->
+<!--                    Appelle de la methode qu'on a declarer avec get, ceci q pour effet d'executer cette fonction -->
+<!--                    <div t-esc="favoriteProducts"/>-->
+                    <t t-foreach="favoriteProducts" t-as="product" t-key="product.id">
+                        <ProductItem product="product" />
+                    </t>
+                </div>
+            </div>
+        </xpath>
+    </t>
+</templates>

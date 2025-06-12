@@ -30,6 +30,10 @@ const paymentScreenInherit = (payment_screen) => class extends payment_screen {
         // on affiche le contenu du retour
         console.log(payment_line)
     }
+//      Nouvelle methode qui est appelée pqr un bouton sur l'interface
+    go_next(){
+        console.log("Ma nouvelle fonction go_next")
+    }
 }
 // Comme Registries regroupe tous les composants, on ajoute les customisations que l'on a faites dans
 // paymentScreenInherit à son composant parent qu'on a importé en faisant appel à la méthode extend de cette facon :
